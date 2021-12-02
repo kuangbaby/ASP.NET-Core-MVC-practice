@@ -1,0 +1,53 @@
+﻿@model Hellocnm.Models.借阅历史
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>借阅历史</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ReaderCode" class="control-label"></label>
+                <input asp-for="ReaderCode" class="form-control" />
+                <span asp-validation-for="ReaderCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookCode" class="control-label"></label>
+                <input asp-for="BookCode" class="form-control" />
+                <span asp-validation-for="BookCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BorrowDate" class="control-label"></label>
+                <input asp-for="BorrowDate" class="form-control" />
+                <span asp-validation-for="BorrowDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShouldReturnDate" class="control-label"></label>
+                <input asp-for="ShouldReturnDate" class="form-control" />
+                <span asp-validation-for="ShouldReturnDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RealReturnDate" class="control-label"></label>
+                <input asp-for="RealReturnDate" class="form-control" />
+                <span asp-validation-for="RealReturnDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
